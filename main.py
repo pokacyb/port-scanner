@@ -4,13 +4,16 @@ from unittest import main
 print("What is the url/IP you would like to scan?")
 URLorIP = input()
 
-print("Enter the port as an integer:")
-targettedPort = int(input())
-print("Enter the port as an integer:")
-targettedPort2 = int(input())
+try:
+    print("Enter the first port of the range as an integer:")
+    startRange = int(input())
+    print("Enter the second port of range as an integer:")
+    endRange = int(input())
+except ValueError:
+    print("This is not a valid integer number. Please try again.")
+    quit()
 
-
-ports = port_scanner.get_open_ports(URLorIP, [targettedPort,targettedPort2])
+ports = port_scanner.get_open_ports(URLorIP, [startRange,endRange])
 print("Open ports:", ports)
 
 # # Called with URL   
