@@ -1,5 +1,10 @@
 import port_scanner
 from unittest import main
+import pyfiglet
+
+ascii_banner = pyfiglet.figlet_format("PORT SCANNER")
+print(ascii_banner)
+
 
 print("What is the url/IP you would like to scan?")
 URLorIP = input()
